@@ -1,0 +1,39 @@
+import wollok.game.*
+import entrenador.*
+
+program pokemonSword {
+
+	//configuracion de tablero
+	game.height(12)
+	game.width(12)
+	game.title("Pokemon Sword")
+	
+	
+	//Agregar al entrenador al tablero
+	entrenadorPk.position(game.at(0.randomUpTo(game.width()),0.randomUpTo(game.height())))
+	game.addVisual(entrenadorPk)
+	
+	//Agregar al auto al tablero
+	Kia.position(game.at(1,4))
+	game.addVisual(Kia)
+	
+	//manejar teclado
+	keyboard.up().onPressDo({
+		Kia.arriba()
+	})
+	keyboard.down().onPressDo({
+		Kia.abajo()
+	})
+	keyboard.left().onPressDo({
+		Kia.izq()
+	})
+	keyboard.right().onPressDo({
+		Kia.derechaCOnNITRO()
+	})
+	
+	
+	
+	
+	
+	game.start()
+}
